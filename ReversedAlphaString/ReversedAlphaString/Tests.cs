@@ -19,6 +19,7 @@ namespace ReversedAlphaString
         [TestCase("ab-cd", "dc-ba")]
         [TestCase("a-bC-dEf-ghIj", "j-Ih-gfE-dCba")]
         [TestCase("Test1ng-Leet=code-Q!", "Qedo1ct-eeLg=ntse-T!")]
+        [TestCase("Test1ng-Leet=code-25Q!", "Qedo1ct-eeLg=ntse-25T!")]
         public void CheckReversed(string s, string expected)
         {
             var actual = stringUtils.ReverseUsingStringBuilder(s);
@@ -28,7 +29,7 @@ namespace ReversedAlphaString
         [Test]
         public void CheckEmptyOrNullString()
         {
-            string actual = "";
+            string actual = null;
             Assert.Throws<ArgumentNullException>(() => stringUtils.ReverseUsingStringBuilder(actual));
         }
     }
